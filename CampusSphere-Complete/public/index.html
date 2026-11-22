@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6f7fb">
+  <title>CampusSphere | College Event Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="authView" class="auth-screen">
+    <section class="auth-art">
+      <div class="auth-brand"><span class="brand-mark">C</span><span><b>CampusSphere</b><small>COLLEGE EVENT MANAGEMENT</small></span></div>
+      <div class="auth-message"><span class="eyebrow">YOUR CAMPUS. YOUR COMMUNITY.</span><h1>Find your people.<br><em>Make it happen.</em></h1><p>Discover college events, join clubs, register for experiences and keep every campus moment in one place.</p><div class="auth-points"><span>✦ Club communities</span><span>✦ Student-first events</span><span>✦ One connected campus</span></div></div>
+      <div class="auth-art-footer">CampusSphere · Semester project edition</div>
+    </section>
+    <section class="auth-card-wrap">
+      <div class="auth-card">
+        <div class="auth-mobile-brand"><span class="brand-mark">C</span><b>CampusSphere</b></div>
+        <div class="auth-heading"><p class="eyebrow">WELCOME TO CAMPUSSPHERE</p><h2 id="authTitle">Welcome back</h2><p id="authSubtitle">Sign in to continue to your campus workspace.</p></div>
+        <div class="auth-tabs"><button id="loginTab" class="active" type="button">Log in</button><button id="signupTab" type="button">Student sign up</button></div>
+        <form id="loginForm" class="auth-form">
+          <label>Email address<input id="loginEmail" type="email" required autocomplete="username" placeholder="you@college.edu"></label>
+          <label>Password<input id="loginPassword" type="password" required autocomplete="current-password" placeholder="Enter your password"></label>
+          <button class="primary-btn wide" type="submit">Log in <span>→</span></button>
+          <p class="auth-note">Admin and club-admin accounts are created by the project administrator.</p>
+        </form>
+        <form id="signupForm" class="auth-form hidden">
+          <div class="form-grid"><label>Full name<input id="signupName" required maxlength="100" placeholder="Your full name"></label><label>College email<input id="signupEmail" type="email" required placeholder="name@college.edu"></label></div>
+          <div class="form-grid"><label>Department<input id="signupDepartment" required placeholder="CSE / IT / ECE"></label><label>Semester<select id="signupSemester" required><option value="">Select semester</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option></select></label></div>
+          <label>Create password<input id="signupPassword" type="password" minlength="8" required autocomplete="new-password" placeholder="At least 8 characters"></label>
+          <button class="primary-btn wide" type="submit">Create student account <span>→</span></button>
+          <p class="auth-note">By signing up, your student profile is added to the project database.</p>
+        </form>
+        <div id="authMessage" class="form-message" role="status"></div>
+        <div class="auth-db"><span class="live-dot"></span><span id="authDbStatus">Checking database connection…</span></div>
+      </div>
+    </section>
+  </div>
+
+  <div id="appView" class="app-shell hidden">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#home"><span class="brand-mark">C</span><span><strong>CampusSphere</strong><small>EVENT MANAGEMENT</small></span></a>
+      <div class="side-label">WORKSPACE</div>
+      <nav class="nav-menu" id="navMenu"></nav>
+      <div class="sidebar-bottom"><div class="help-card"><div class="help-icon">✦</div><strong>Campus made simple</strong><p>Discover, connect and create experiences across your college.</p></div>
+        <div class="user-profile"><div class="avatar" id="userAvatar">U</div><div class="user-meta"><strong id="userName">User</strong><small id="userRole">Student</small></div><button id="logoutButton" class="icon-btn" title="Log out" aria-label="Log out">↪</button></div>
+      </div>
+    </aside>
+    <main class="main-content">
+      <header class="topbar"><button class="mobile-menu" id="mobileMenu" aria-label="Toggle menu">☰</button><div class="breadcrumb">Workspace <span>/</span> <strong id="breadcrumbTitle">Dashboard</strong></div>
+        <div class="topbar-right"><span class="live-dot"></span><span class="system-status" id="systemStatus">Connected</span><button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">☾ <span>Dark mode</span></button><button id="notificationButton" class="icon-btn notification-btn" title="Notifications">♧<i id="notificationDot"></i></button><button id="topLogoutButton" class="top-logout-btn" type="button" title="Log out of CampusSphere">↪ <span>Log out</span></button><div class="top-avatar" id="topAvatar">U</div></div>
+      </header>
+      <div id="appContent" class="app-content"></div>
+      <footer class="footer"><span>CampusSphere · College Event Management System</span><span>MySQL + Node.js · Demo project</span></footer>
+    </main>
+  </div>
+  <div id="modalRoot"></div>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
